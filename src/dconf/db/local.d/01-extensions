@@ -1,0 +1,3 @@
+[org/gnome/shell]
+disable-user-extensions=false
+enabled-extensions=['appindicatorsupport@rgcjonas.gmail.com', 'forge@jmmaranan.com', 'GPaste@gnome-shell-extensions.gnome.org', 'gpaste-reloaded@feuerfuchs.eu', 'background-logo@fedorahosted.org']
