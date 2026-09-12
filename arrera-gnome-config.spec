@@ -1,5 +1,5 @@
 Name:           arrera-gnome-config
-Version:        1.0.1
+Version:        1.0.2
 Release:        1%{?dist}
 Summary:        Default GNOME configuration and tweaks for Arrera Linux
 License:        GPL-3.0-or-later
@@ -13,6 +13,7 @@ Requires:       gnome-shell-extension-appindicator
 Requires:       gnome-shell-extension-forge
 Requires:       gnome-shell-extension-gpaste
 Requires:       gnome-shell-extension-background-logo
+Requires:       gnome-shell-extension-arrera-dock
 Requires:       arrera-branding
 Requires:       arrera-wallpapers
 
@@ -48,5 +49,8 @@ fi
 %config(noreplace) %{_sysconfdir}/dconf/db/local.d/*
 
 %changelog
+* Sun Sep 06 2026 Arrera Software <contact@arrera.org> - 1.0.2-1
+- Add gnome-shell-extension-arrera-dock to default enabled extensions
+
 * Thu Aug 27 2026 Arrera Software <contact@arrera.org> - 1.0.1-1
 - Remove /etc/dconf/profile/user to prevent file conflict with standard dconf package
