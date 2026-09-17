@@ -3,7 +3,7 @@ Version:        1.0.2
 Release:        1%{?dist}
 Summary:        Default GNOME configuration and tweaks for Arrera Linux
 License:        GPL-3.0-or-later
-URL:            https://arrera.org/
+URL:            https://github.com/Arrera-Blue/arrera-gnome-config
 Source0:        %{name}-%{version}.tar.gz
 BuildArch:      noarch
 
