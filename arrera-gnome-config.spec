@@ -1,5 +1,5 @@
 Name:           arrera-gnome-config
-Version:        1.0.2
+Version:        2026.beta.1
 Release:        1%{?dist}
 Summary:        Default GNOME configuration and tweaks for Arrera Linux
 License:        GPL-3.0-or-later
