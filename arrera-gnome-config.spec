@@ -1,6 +1,6 @@
 Name:           arrera-gnome-config
 Version:        2026.beta.1
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Default GNOME configuration and tweaks for Arrera Linux
 License:        GPL-3.0-or-later
 URL:            https://github.com/Arrera-Blue/arrera-gnome-config
@@ -19,7 +19,7 @@ Requires:       arrera-wallpapers
 
 %description
 Default GNOME desktop environment settings, window management preferences,
-enabled extensions, and dconf local database for Arrera Linux.
+enabled extensions, Firefox policies, and dconf local database for Arrera Linux.
 
 %prep
 %autosetup
@@ -30,13 +30,26 @@ enabled extensions, and dconf local database for Arrera Linux.
 %install
 rm -rf %{buildroot}
 
-# Base de règles dconf locales uniquement
+# 1. Base de règles dconf locales
 mkdir -p %{buildroot}%{_sysconfdir}/dconf/db/local.d
 cp src/dconf/db/local.d/* %{buildroot}%{_sysconfdir}/dconf/db/local.d/
+
+# 2. Politique Firefox par défaut
+mkdir -p %{buildroot}%{_sysconfdir}/firefox/policies
+cp src/firefox/policies.json %{buildroot}%{_sysconfdir}/firefox/policies/policies.json
 
 %post
 if [ -x /usr/bin/dconf ]; then
     /usr/bin/dconf update &>/dev/null || :
+fi
+
+# Déploiement de secours dans les répertoires de distribution Firefox si présents
+if [ -f %{_sysconfdir}/firefox/policies/policies.json ]; then
+    for dist_dir in /usr/lib64/firefox/distribution /usr/lib/firefox/distribution; do
+        if [ -d "$dist_dir" ]; then
+            cp -f %{_sysconfdir}/firefox/policies/policies.json "$dist_dir/policies.json" 2>/dev/null || :
+        fi
+    done
 fi
 
 %postun
@@ -47,8 +60,12 @@ fi
 %files
 %license LICENSE
 %config(noreplace) %{_sysconfdir}/dconf/db/local.d/*
+%config(noreplace) %{_sysconfdir}/firefox/policies/policies.json
 
 %changelog
+* Sat Sep 19 2026 Arrera Software <contact@arrera.org> - 2026.beta.1-2
+- Add clean default Firefox policy in /etc/firefox/policies/policies.json
+
 * Sun Sep 06 2026 Arrera Software <contact@arrera.org> - 1.0.2-1
 - Add gnome-shell-extension-arrera-dock to default enabled extensions
 

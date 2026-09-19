@@ -1,0 +1,16 @@
+{
+  "policies": {
+    "DisplayBookmarksToolbar": "never",
+    "NoDefaultBookmarks": true,
+    "FirefoxHome": {
+      "Search": true,
+      "TopSites": false,
+      "SponsoredTopSites": false,
+      "Highlights": false,
+      "Pocket": false,
+      "SponsoredPocket": false,
+      "Snippets": false,
+      "Locked": false
+    }
+  }
+}
