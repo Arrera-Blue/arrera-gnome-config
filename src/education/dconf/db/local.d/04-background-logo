@@ -1,7 +1,7 @@
 [org/fedorahosted/background-logo-extension]
 logo-always-visible=true
-logo-file='/usr/share/pixmaps/baniere_white.png'
-logo-file-dark='/usr/share/pixmaps/baniere_white.png'
+logo-file='/usr/share/backgrounds/arrera/baniere_education_green.png'
+logo-file-dark='/usr/share/backgrounds/arrera/baniere_education_white.png'
 logo-position='bottom-right'
 logo-size=15.0
 logo-border=uint32 50

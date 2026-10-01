@@ -1,6 +1,6 @@
 Name:           arrera-gnome-config
 Version:        2026.beta.1
-Release:        3%{?dist}
+Release:        4%{?dist}
 Summary:        Default GNOME configuration and tweaks for Arrera Linux
 License:        GPL-3.0-or-later
 URL:            https://github.com/Arrera-Blue/arrera-gnome-config
@@ -25,7 +25,7 @@ Requires:       gnome-shell-extension-forge
 Requires:       gnome-shell-extension-gpaste
 Requires:       gnome-shell-extension-background-logo
 Requires:       gnome-shell-extension-arrera-dock
-Requires:       arrera-branding
+Requires:       arrera-branding-home
 Requires:       arrera-wallpapers
 
 Provides:       %{name} = %{version}-%{release}
@@ -50,7 +50,7 @@ Requires:       gnome-shell-extension-forge
 Requires:       gnome-shell-extension-gpaste
 Requires:       gnome-shell-extension-background-logo
 Requires:       gnome-shell-extension-arrera-dock
-Requires:       arrera-branding
+Requires:       arrera-branding-education
 Requires:       arrera-wallpapers
 
 Provides:       %{name} = %{version}-%{release}
@@ -75,7 +75,7 @@ Requires:       gnome-shell-extension-forge
 Requires:       gnome-shell-extension-gpaste
 Requires:       gnome-shell-extension-background-logo
 Requires:       gnome-shell-extension-arrera-dock
-Requires:       arrera-branding
+Requires:       arrera-branding-enterprise
 Requires:       arrera-wallpapers
 
 Provides:       %{name} = %{version}-%{release}
@@ -183,6 +183,10 @@ fi
 %config(noreplace) %{_sysconfdir}/firefox/policies/policies.json.enterprise
 
 %changelog
+* Thu Oct 01 2026 Arrera Software <contact@arrera.org> - 2026.beta.1-4
+- Configure edition-specific background logos from arrera-branding
+- Explicitly require arrera-branding-<edition> for each package
+
 * Thu Oct 01 2026 Arrera Software <contact@arrera.org> - 2026.beta.1-3
 - Split package into 3 edition subpackages: home, education, enterprise
 
