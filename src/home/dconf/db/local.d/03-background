@@ -1,0 +1,10 @@
+[org/gnome/desktop/background]
+picture-uri='file:///usr/share/backgrounds/arrera/blue.png'
+picture-uri-dark='file:///usr/share/backgrounds/arrera/blue.png'
+primary-color='#1e3a8a'
+secondary-color='#1e3a8a'
+
+[org/gnome/desktop/screensaver]
+picture-uri='file:///usr/share/backgrounds/arrera/blue.png'
+primary-color='#1e3a8a'
+secondary-color='#1e3a8a'

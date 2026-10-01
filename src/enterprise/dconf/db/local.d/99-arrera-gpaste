@@ -1,0 +1,8 @@
+[org/gnome/GPaste/keybindings]
+launch-ui=''
+pop-from-history=''
+show-history=''
+sync-clipboard-to-primary=''
+sync-primary-to-clipboard=''
+upload-to-pastebin=''
+convert-to-password=''
